@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
+.subcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.yellowmarker {
+  background-color: #fecb00;
+  width: 3rem;
+}
+
+.titlebox {
+  background-color: #292a30;
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.subtitle {
+  margin-left: 3rem;
+}

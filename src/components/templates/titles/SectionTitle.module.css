@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.line {
+  background-color: #fecb00;
+  height: 2px;
+}
+
+.title.black {
+  color: #000;
+}
+
+.line.black {
+  background-color: #000;
+}
+
+
