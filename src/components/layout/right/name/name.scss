@@ -1,0 +1,32 @@
+@import "../../../../styles/variables.scss";
+
+.name {
+  background: $titlePanel;
+  display: flex;
+  justify-content: center;
+}
+
+.name__container {
+  padding: $cornerRadius;
+  display: flex;
+  flex-direction: column;
+
+  .name__container-group {
+    display: flex;
+    p {
+      margin: 0;
+      padding-right: 0.3rem;
+      color: $colorMain;
+      font-size: 4rem;
+    }
+    .name__container-group-firstname {
+      font-weight: bold;
+    }
+  }
+
+  .name__container-role {
+    margin: 0;
+    color: $colorSecondary;
+    font-size: 1.5rem;
+  }
+}

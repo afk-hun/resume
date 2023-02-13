@@ -1,0 +1,28 @@
+@import "../../../../../styles/variables.scss";
+
+.language__container {
+  display: flex;
+  flex-direction: column;
+
+  .language__container-title {
+    color: $colorTertiary;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .language__container-colorbox {
+    display: flex;
+    flex-direction: column;
+    background: $colorSecondary;
+
+    .language__container-colorbox-knowledge {
+      background: $titlePanel;
+      height: 1rem;
+    }
+
+    .language__container-colorbox-motivation {
+      background: $colorTertiary;
+      height: 1rem;
+    }
+  }
+}

@@ -1,21 +1,26 @@
 import Description from "../../../templates/description/Description";
 import SectionTitle from "../../../templates/titles/SectionTitle";
 import Job from "../../personal/job/Job";
-import Name from "../../personal/name/Name";
-import styles from "./RightPanel.module.css";
+import Name from "./name/Name";
+import "./rightPanel.scss";
 
 function RightPanel() {
   return (
-    <div className={styles.container}>
-      <Name name="Akos Ferenc Kalamar" knowledge="Software engineer" />
-      <div className={styles.aboutmecontainer}>
+    <div className="rightpanel">
+      <Name
+        firstName="Ákos"
+        middleName="Ferenc"
+        lastName="Kalamár"
+        role="Software engineer"
+      />
+      {/* <div >
         <SectionTitle title="About me" className="black" />
         <Description
           className="black"
           description={`I need sek sek, sek is what i need hej hej|I'm a developer who is trying himself in many different roles.`}
         />
       </div>
-      <div className={styles.aboutmecontainer}>
+      <div >
         <SectionTitle title="Work experience" className="black" />
         <Job
           interval="2015-2018"
@@ -41,7 +46,7 @@ function RightPanel() {
           company="NNG LLC/Budapest Hungary"
           jobDescription="iGO"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
