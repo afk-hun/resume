@@ -1,0 +1,9 @@
+.card {
+  border-radius: 80px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=card.css.map */

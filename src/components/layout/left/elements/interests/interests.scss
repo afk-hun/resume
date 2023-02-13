@@ -1,0 +1,16 @@
+@import "../../../../../styles/variables.scss";
+
+.interests__container {
+  padding-left: $detailsPadding;
+  color: $colorSecondary;
+
+  .interests__container-title {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+}

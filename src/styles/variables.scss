@@ -1,0 +1,20 @@
+// colors
+$mainBackground: #fff;
+
+$titlePanel: #99c4c8;
+$sidePanel: #32667a;
+
+$colorMain: #32667a;
+$colorSecondary: #e3f5fc;
+$colorTertiary: #eee4ab;
+
+// layout properties
+$cornerRadius: 2rem;
+$detailsPadding: 1rem;
+
+//text properies
+$sectionSize: 1.3rem;
+
+@mixin mainPadding() {
+  padding: 1rem;
+}

@@ -1,0 +1,26 @@
+.leftpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.picture {
+  display: flex;
+  justify-content: center;
+}
+
+.base {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.left {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .left {
+    width: 80%;
+  }
+}/*# sourceMappingURL=leftPanel.css.map */

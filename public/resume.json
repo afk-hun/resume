@@ -1,0 +1,86 @@
+{
+    "afk" : {
+        "first_name": "Ákos Ferenc",
+        "last_name": "Kalamár",
+        "role": "Software engineer",
+
+        "contact": {
+            "mail": "akos.kalamar@gmail.com",
+            "phone": "+36706078765",
+            "location": "Budapest",
+            "linkedin": "https://www.linkedin.com/in/%C3%A1kos-ferenc-kalam%C3%A1r-4ba149125/" 
+        },
+        "about_me": "I'm a developer who is trying himself in many different roles. I like to be a part of new projects, come up with new ideas and accomplish them. I like to work in a cheerful environment, however, it is important for me to have space where I can focus on my tasks. If you see a camera in my hand, don’t panic it is my guilty pleasure. It helps me to be more creative in life.",
+        "work_experience": {
+            "we_1": {
+                "interval": "2020-Present",
+                "position": "Full stack developer",
+                "unit": "Navigation Unit",
+                "company": "NNG LLC",
+                "place": "Budapest, Hungary",
+                "description": "Development, maintenance and customization of our navigation software for our customers (Java, C++ , X-Script). | I have become one of the key members of our SDK and API development team. I have prepared more than 90% of the android sdk and the sample app which belongs to it. As an extension of our documentation this app is a guide on how to use our SDK."
+            }, 
+            "we_2": {
+                "interval": "2019-2020",
+                "position": "Full stack developer",
+                "unit": "Automotive Unit",
+                "company": "NNG LLC",
+                "place": "Budapest, Hungary",
+                "description": "This is one of the best period of my carrier. I was a member of an innovation team that worked on a new era of cars infotainment system. We prepared the UX/UI design front-end, back-end and embedded development. Unfortunately, the year 2020 wasn’t gentle for us and this project was cancelled."
+            }, 
+            "we_3": {
+                "interval": "2018-2019",
+                "position": "Frontend developer",
+                "unit": "Automotive Unit",
+                "company": "NNG LLC",
+                "place": "Budapest, Hungary",
+                "description": "I have gained experience in development of iGO front-end. How to use our custom UIML markup language and how to give soul to the layout with Lua script. I worked on many interesting projects of our customers like SAIC Motors, Pioneer or Ferrari."
+            },
+            "we_4": {
+                "interval": "2015-2018",
+                "position": "Software developer",
+                "unit": "",
+                "company": "LOGIPIX",
+                "place": "Budapest, Hungary",
+                "description": "Windows applicitaion developement (in Delphi) for security cameras, traffic and parking observation system. With this application the enduser can handle and supervise camera images and nvr system."
+            }
+        },
+        "skills": "Agile development;Teamwork|UI/UX;Creativity|C++, Java, JavaScript;Decision Making|Debugging;Patinece|Mobile development;Working under pressure",
+        "education" : {
+            "e_1": {
+                "degree": "Computer science Bsc",
+                "institution": "Eötvös Loránd University",
+                "interval": "2013-2015, 2017-2019"
+            },
+            "e_2": {
+                "degree": "Photographer",
+                "institution": "FOCUS Education Center Ltd.",
+                "interval": "2020-2021"
+            }
+        },
+        "courses": "UX Project - xLabs|React The Complete Guide - Academind|CSS The Complete Guide - Academind",
+        "languages": {
+            "lang_1" : {
+                "name": "English",
+                "knowledge": 55,
+                "motivation": 75
+            },
+            "lang_2" : {
+                "name": "Swedish",
+                "knowledge": 5,
+                "motivation": 100
+            }
+        },
+        "driving_license": "Category B",
+        "interests": {
+            "title": "In my free time, I like:",
+            "todo": {
+                "t_1": "improving my knowledge",
+                "t_2": "biking",
+                "t_3": "taking photos",
+                "t_4": "hiking with my wife and our dog",
+                "t_5": "playing board games with my friends"
+            }
+        }
+    } 
+}
