@@ -7,11 +7,8 @@
   padding: $cornerRadius;
 
   .basics__container-section {
-    margin: 0;
+    @include sectionTitle();
     color: $colorSecondary;
-    text-transform: uppercase;
-    font-size: $sectionSize;
-    margin-bottom: 0.7rem;
   }
   .basics__container-drivinglic {
     text-transform: none;

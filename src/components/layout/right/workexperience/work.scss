@@ -1,0 +1,45 @@
+@import "../../../../styles/variables.scss";
+.work__container {
+  display: flex;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0;
+  }
+
+  .work__container-interval {
+    margin: 0;
+    min-width: 8rem;
+  }
+
+  .wok_container-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+
+    .wok_container-details-title {
+      display: flex;
+
+      .wok_container-details-title-position {
+      }
+      .wok_container-details-title-unit {
+        margin-left: $textSpace;
+      }
+    }
+
+    .wok_container-details-location {
+      display: flex;
+
+      .wok_container-details-location-company {
+      }
+      .wok_container-details-location-place {
+        margin-left: $textSpace;
+      }
+    }
+
+    .wok_container-details-description {
+      margin: 0;
+      @include textJustifyLastLeft();
+    }
+  }
+}

@@ -1,4 +1,16 @@
 .picture {
-  width: 18rem;
-  height: 20rem;
+  margin-bottom: 1rem;
+  background: url("../../imgs/AFK_cv-1.jpg");
+  background-position: center;
+  background-position-y: top;
+  background-origin: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40rem;
+}
+
+@media (min-width: 40rem) {
+  .picture {
+    height: 20rem;
+  }
 }

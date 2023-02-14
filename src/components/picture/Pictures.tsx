@@ -2,7 +2,12 @@ import { useState } from "react";
 import Card from "../ui/card/Card";
 import "./pictures.scss";
 
-function Pictures() {
+type PictureProps = {
+  className?: string;
+};
+
+function Pictures(props: PictureProps) {
+  const classes = `picture ${props.className}`;
   const [isMouseEntered, setIsMouseEnetered] = useState(false);
   const [bgColor, setBgColor] = useState("#ffff00");
 
@@ -22,8 +27,11 @@ function Pictures() {
   };
 
   return (
-    <Card>
-      <img className="picture" src="../imgs/AFK_cv-1.jpg" />
+    <Card className="picture">
+      {/* <div
+        className="picture"
+        style={{ backgroundImage: `url("../../imgs/AFK_cv-1.jpg")` }}
+      /> */}
       {/* className={`${styles.picture}`}
       style={{ backgroundColor: `${bgColor}` }}
       onMouseOver={onMouseOverHandler} */}

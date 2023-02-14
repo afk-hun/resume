@@ -7,7 +7,7 @@
   justify-content: space-evenly;
 }
 
-.picture {
+.image {
   display: flex;
   justify-content: center;
 }
@@ -18,12 +18,9 @@
   align-items: flex-end;
 }
 
-.left {
-  width: 100%;
-}
-
 @media (min-width: 40rem) {
-  .left {
-    width: 80%;
+  .leftpanel {
+    width: 20rem;
+    height: 100%;
   }
 }

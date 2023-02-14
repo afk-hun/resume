@@ -14,7 +14,19 @@ $detailsPadding: 1rem;
 
 //text properies
 $sectionSize: 1.3rem;
+$textSpace: 0.3rem;
 
 @mixin mainPadding() {
   padding: 1rem;
+}
+@mixin sectionTitle() {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: $sectionSize;
+  margin-bottom: 0.7rem;
+}
+
+@mixin textJustifyLastLeft() {
+  text-align: justify;
+  text-align-last: left;
 }

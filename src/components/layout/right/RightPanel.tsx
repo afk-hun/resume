@@ -1,8 +1,8 @@
-import Description from "../../../templates/description/Description";
-import SectionTitle from "../../../templates/titles/SectionTitle";
-import Job from "../../personal/job/Job";
+import ContactGroup from "./contact/ContactGroup";
 import Name from "./name/Name";
+import WorkGroup from "./workexperience/WorkGroup";
 import "./rightPanel.scss";
+import SkillGroup from "./skills/SkillGroup";
 
 function RightPanel() {
   return (
@@ -13,6 +13,23 @@ function RightPanel() {
         lastName="Kalamár"
         role="Software engineer"
       />
+      <div className="rightpanel__details">
+        <ContactGroup />
+        <p className="rightpanel__details-section">About me</p>
+        <p className="rightpanel__details-aboutme">
+          I'm a developer who is trying himself in many different roles. I like
+          to be a part of new projects, come up with new ideas and accomplish
+          them. I like to work in a cheerful environment, however, it is
+          important for me to have space where I can focus on my tasks. If you
+          see a camera in my hand, don’t panic it is my guilty pleasure. It
+          helps me to be more creative in life.
+        </p>
+        <p className="rightpanel__details-section">Work Experience</p>
+        <WorkGroup />
+        <p className="rightpanel__details-section">Skills</p>
+        <SkillGroup />
+      </div>
+
       {/* <div >
         <SectionTitle title="About me" className="black" />
         <Description

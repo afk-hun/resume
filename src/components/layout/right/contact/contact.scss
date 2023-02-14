@@ -1,0 +1,10 @@
+@import "../../../../styles/variables.scss";
+
+.contact__container {
+  display: flex;
+  margin: 0.5rem;
+  p {
+    margin: 0;
+    color: $colorMain;
+  }
+}
