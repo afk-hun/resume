@@ -2,5 +2,5 @@
 
 .card {
   border-radius: $cornerRadius;
-  box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.25);
+  box-shadow: 2px 2px 2px rgba($color: $colorMain, $alpha: 0.25);
 }

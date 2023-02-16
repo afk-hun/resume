@@ -1,6 +1,8 @@
 @import "../../../../styles/variables.scss";
+
 .work__container {
   display: flex;
+  flex-direction: column;
   margin-bottom: 1rem;
 
   p {
@@ -19,6 +21,7 @@
 
     .wok_container-details-title {
       display: flex;
+      text-transform: uppercase;
 
       .wok_container-details-title-position {
       }
@@ -29,6 +32,7 @@
 
     .wok_container-details-location {
       display: flex;
+      text-transform: uppercase;
 
       .wok_container-details-location-company {
       }
@@ -41,5 +45,11 @@
       margin: 0;
       @include textJustifyLastLeft();
     }
+  }
+}
+
+@media (min-width: 40rem) {
+  .work__container {
+    flex-direction: row;
   }
 }
