@@ -2,13 +2,20 @@ import Contact from "./Contact";
 
 import "./contactGroup.scss";
 
-function ContactGroup() {
+type ContactType = {
+  mail: string;
+  phone: string;
+  linkedin: string;
+  city: string;
+};
+
+function ContactGroup(props: ContactType) {
   return (
     <div className="contac-group__container">
-      <Contact imageSrc="" text="akos.kalamar@gmail.com" />
-      <Contact imageSrc="" text="+36-70/607-8765" />
-      <Contact imageSrc="" text="AFK" />
-      <Contact imageSrc="" text="Budapset" />
+      <Contact imageSrc="" text={props.mail} />
+      <Contact imageSrc="" text={props.phone} />
+      <Contact imageSrc="" text="LinkedIn" />
+      <Contact imageSrc="" text={props.city} />
     </div>
   );
 }
