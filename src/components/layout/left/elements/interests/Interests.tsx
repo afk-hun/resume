@@ -1,15 +1,14 @@
+import { InterestsType } from "../../../../../store/interests/interests-slice";
 import "./interests.scss";
 
-function Interests() {
+function Interests(props: { interests: InterestsType }) {
   return (
     <div className="interests__container">
-      <p className="interests__container-title">In my freetime:</p>
+      <p className="interests__container-title">{props.interests.title}</p>
       <ul>
-        <li>play</li>
-        <li>play</li>
-        <li>play</li>
-        <li>play</li>
-        <li>play</li>
+        {props.interests.todo.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
       </ul>
     </div>
   );

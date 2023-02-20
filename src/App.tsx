@@ -5,6 +5,8 @@ import Card from "./components/ui/card/Card";
 
 import "./app.scss";
 
+export const domainLink = "http://192.168.0.47:3000/resume.json";
+
 function App() {
   return (
     <div className="app_container">

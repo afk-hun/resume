@@ -49,7 +49,13 @@
         }
       ],
 
-      "skills": "Agile development;Teamwork|UI/UX;Creativity|C++, Java, JavaScript;Decision Making|Debugging;Patinece|Mobile development;Working under pressure"
+      "skills": [
+        "Agile development;Teamwork",
+        "UI/UX;Creativity",
+        "C++, Java, JavaScript;Decision Making",
+        "Debugging;Patinece",
+        "Mobile development;Working under pressure"
+      ]
     },
 
     "education": {
@@ -88,13 +94,13 @@
 
     "interests": {
       "title": "In my free time, I like:",
-      "todo": {
-        "t_1": "improving my knowledge",
-        "t_2": "biking",
-        "t_3": "taking photos",
-        "t_4": "hiking with my wife and our dog",
-        "t_5": "playing board games with my friends"
-      }
+      "todo": [
+        "improving my knowledge",
+        "biking",
+        "taking photos",
+        "hiking with my wife and our dog",
+        "playing board games with my friends"
+      ]
     }
   }
 }

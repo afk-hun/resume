@@ -1,9 +1,19 @@
 import "./skillGroup.scss";
 
-function SkillGroup() {
+function SkillGroup(props: { skills: string[] }) {
   return (
     <div className="skills__container">
-      <div className="skills__container-item">
+      {props.skills.map((item) => {
+        const splited = item.split(";");
+        return (
+          <div className="skills__container-item" key={item}>
+            <p>{splited[0]}</p>
+            <p>{splited[1]}</p>
+          </div>
+        );
+      })}
+
+      {/* <div className="skills__container-item">
         <p>Agile</p>
         <p>Team work</p>
       </div>
@@ -26,7 +36,7 @@ function SkillGroup() {
       <div className="skills__container-item">
         <p>Agile</p>
         <p>Team work</p>
-      </div>
+      </div> */}
     </div>
   );
 }

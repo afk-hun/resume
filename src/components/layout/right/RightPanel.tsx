@@ -9,13 +9,19 @@ import {
   getPersonData,
   selectPersonBasics,
 } from "../../../store/basic-infos/basic-info-slice";
+import {
+  getExperience,
+  selectExperience,
+} from "../../../store/experience/experience-slice";
 
 function RightPanel() {
   const dispatch = useAppDispatch();
   const person = useAppSelector(selectPersonBasics);
+  const experience = useAppSelector(selectExperience);
 
   useEffect(() => {
     dispatch(getPersonData());
+    dispatch(getExperience());
   }, [dispatch]);
 
   return (
@@ -36,9 +42,9 @@ function RightPanel() {
         <p className="rightpanel__details-section">About me</p>
         <p className="rightpanel__details-aboutme">{person.about_me}</p>
         <p className="rightpanel__details-section">Work Experience</p>
-        <WorkGroup />
+        <WorkGroup works={experience.experience} />
         <p className="rightpanel__details-section">Skills</p>
-        <SkillGroup />
+        <SkillGroup skills={experience.skills} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { domainLink } from "../../App";
 import { RootState } from "../resume-store";
 
 type SchoolType = {
@@ -7,38 +8,39 @@ type SchoolType = {
   interval: string;
 };
 
-type LanguagesType = {
+export type LanguagesType = {
   name: string;
   knowledge: number;
   motivation: number;
 };
 
 type EducationType = {
-  name: SchoolType[];
+  school: SchoolType[];
   courses: string[];
   languages: LanguagesType[];
+  driving_lic: string;
 };
 
 const initialState: EducationType = {
-  name: [],
+  school: [],
   courses: [],
   languages: [],
+  driving_lic: "",
 };
 
 export const getEducationData = createAsyncThunk(
-  "basicInfos/fetchData",
+  "education/fetchData",
   async () => {
-    const response = await (
-      await fetch(`http://localhost:3000/resume.json`)
-    ).json();
+    const response = await (await fetch(domainLink)).json();
 
     const data = await response.afk.education;
     console.log(data);
 
     const education: EducationType = {
-      name: data.school,
+      school: data.school,
       courses: data.courses,
       languages: data.languages,
+      driving_lic: data.driving_license,
     };
     return education;
   }
@@ -51,9 +53,10 @@ const educationSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getEducationData.fulfilled, (state, action) => {
       console.log("education");
-      state.name = action.payload.name;
+      state.school = action.payload.school;
       state.courses = action.payload.courses;
       state.languages = action.payload.languages;
+      state.driving_lic = action.payload.driving_lic;
     });
   },
 });

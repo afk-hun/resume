@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { domainLink } from "../../App";
 import { RootState } from "../resume-store";
 
 export type NameType = {
@@ -31,9 +32,7 @@ const initialState: PersonBasics = {
 export const getPersonData = createAsyncThunk(
   "basicInfos/fetchData",
   async () => {
-    const response = await (
-      await fetch(`http://localhost:3000/resume.json`)
-    ).json();
+    const response = await (await fetch(domainLink)).json();
 
     const data = await response.afk.basic_infos;
     console.log(data);
