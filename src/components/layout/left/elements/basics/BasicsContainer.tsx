@@ -19,7 +19,7 @@ import LangugaesContainer from "../language/LanguagesConatainer";
 
 import "./basicsContainer.scss";
 
-function BasicsContainer() {
+function BasicsContainer(props: {className: string}) {
   const dispatcher = useAppDispatch();
   const education = useAppSelector(selectEducation);
   const interests = useAppSelector(selectInterests);
@@ -30,7 +30,7 @@ function BasicsContainer() {
   }, [dispatcher]);
 
   return (
-    <Card className="basics__container">
+    <Card className={`basics__container ${props.className}`}>
       <p className="basics__container-section">Education</p>
       <div>
         {education.school.map((item) => {

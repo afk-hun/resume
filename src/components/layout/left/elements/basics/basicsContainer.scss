@@ -11,8 +11,8 @@
     color: $colorSecondary;
   }
   .basics__container-drivinglic {
-    text-transform: none;
     font-size: 1rem;
+    @include SFProRegular();
     color: $colorTertiary;
     margin: 0;
     margin-bottom: 1rem;

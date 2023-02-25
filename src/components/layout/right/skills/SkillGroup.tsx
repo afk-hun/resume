@@ -6,37 +6,12 @@ function SkillGroup(props: { skills: string[] }) {
       {props.skills.map((item) => {
         const splited = item.split(";");
         return (
-          <div className="skills__container-item" key={item}>
-            <p>{splited[0]}</p>
-            <p>{splited[1]}</p>
+          <div className="skills__container-items" key={item}>
+            <p className="skills__container-item-left">{splited[0]}</p>
+            <p className="skills__container-item-right">{splited[1]}</p>
           </div>
         );
       })}
-
-      {/* <div className="skills__container-item">
-        <p>Agile</p>
-        <p>Team work</p>
-      </div>
-
-      <div className="skills__container-item">
-        <p>Agile</p>
-        <p>Team work</p>
-      </div>
-
-      <div className="skills__container-item">
-        <p>Agile</p>
-        <p>Team work</p>
-      </div>
-
-      <div className="skills__container-item">
-        <p>Agile</p>
-        <p>Team work</p>
-      </div>
-
-      <div className="skills__container-item">
-        <p>Agile</p>
-        <p>Team work</p>
-      </div> */}
     </div>
   );
 }

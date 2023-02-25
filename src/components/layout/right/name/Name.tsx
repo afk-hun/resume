@@ -10,6 +10,7 @@ import Card from "../../../ui/card/Card";
 import "./name.scss";
 
 type NameProps = {
+  className: string;
   firstName: string;
   middleName: string;
   lastName: string;
@@ -18,7 +19,7 @@ type NameProps = {
 
 function Name(props: NameProps) {
   return (
-    <Card className="name">
+    <Card className={`name ${props.className}`}>
       <div className="name__container">
         <div className="name__container-group">
           <p className="name__container-group-firstname">{props.firstName}</p>

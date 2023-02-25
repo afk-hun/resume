@@ -1,21 +1,25 @@
 import React from "react";
-import LeftPanel from "./components/layout/left/LeftPanel";
-import RightPanel from "./components/layout/right/RightPanel";
-import Card from "./components/ui/card/Card";
+import ReactDOM from "react-dom/client";
 
-import "./app.scss";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-export const domainLink = "http://192.168.0.47:3000/resume.json";
+
+import MainPage from "./MainPage";
+import ResumePage from "./ResumePage";
+
+//export const domainLink = "http://192.168.0.47:3000/resume.json";
+export const domainLink = "http://localhost:3000/resume.json";
+
+const router = createBrowserRouter([
+  { path: "/", element: <MainPage />},
+  { path: "/resume", element: <ResumePage />},
+]);
 
 function App() {
-  return (
-    <div className="app_container">
-      {/* <Card>Hej trevligt att träffas!</Card> */}
-
-      <LeftPanel />
-      <RightPanel />
-    </div>
-  );
+  return ( <RouterProvider router={router} /> );
 }
 
 export default App;

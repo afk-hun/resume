@@ -11,9 +11,12 @@
   p {
     margin: 0;
     color: $colorSecondary;
+    @include SFProMediumItalic();
   }
 
   .education__container-degree {
     color: $colorTertiary;
+    @include SFProRegular();
+    font-size: 1.2rem;
   }
 }

@@ -1,3 +1,46 @@
+// fonts
+$link: "http://localhost:3000/";
+@font-face {
+  font-family: "SFProDisplayBold";
+  src: url( $link + "/fonts/SF-Pro-Display-Bold.otf");
+}
+@mixin SFProBold() {
+  font-weight: bold;
+  //font-family: "SFProDisplayBold", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "SFProDisplayRegular";
+  src: url($link + "fonts/SF-Pro-Display-Regular.otf");
+}
+@mixin SFProRegular() {
+  font-weight: normal;
+  //font-family: "SFProDisplayRegular", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "SFProDisplayLight";
+  src: url($link + "fonts/SF-Pro-Display-Light.otf");
+}
+@mixin SFProLight() {
+  font-weight: 300;
+  //font-style:initial;
+  //font-family: "SFProDisplayLight", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "SFProDisplayMediumItalic";
+  src: url($link + "fonts/SF-Pro-Display-MediumItalic.otf");
+}
+@mixin SFProMediumItalic() {
+  font-style: italic;
+  //font-family: "SFProDisplayMediumItalic", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
 // colors
 $mainBackground: #fff;
 
@@ -22,6 +65,7 @@ $textSpace: 0.3rem;
 @mixin sectionTitle() {
   margin: 0;
   text-transform: uppercase;
+  @include SFProRegular();
   font-size: $sectionSize;
   margin-bottom: 0.7rem;
 }
@@ -30,3 +74,5 @@ $textSpace: 0.3rem;
   text-align: justify;
   text-align-last: left;
 }
+
+

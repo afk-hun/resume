@@ -2,17 +2,33 @@
 .skills__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items:center;
+  //justify-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
 
-  .skills__container-item {
+  .skills__container-items {
     display: flex;
-    width: 100%;
+    //justify-content:space-around;
+    //align-items: center;
+    //width: 100%;
+    //margin: auto;
 
     p {
-      margin: 0;
       display: block;
       width: 100%;
-      text-align: center;
+      margin: 0;
+      font-size: 1.2rem;
+      @include SFProRegular();
     }
+
+    .skills__container-item-left{
+      text-align: left;
+    }
+
+    .skills__container-item-right {
+      text-align: right;
+    }
+
   }
 }

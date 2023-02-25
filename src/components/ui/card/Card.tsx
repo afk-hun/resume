@@ -5,7 +5,7 @@ import "./card.scss";
 type ReactChild = React.ReactNode; // JSX.Element; //ReactElement | string | number;
 type Props = {
   className?: string;
-  children?: JSX.Element | JSX.Element[]; //ReactChild;
+  children?: JSX.Element | JSX.Element[] | string; //ReactChild;
 };
 
 function Card(props: Props) {

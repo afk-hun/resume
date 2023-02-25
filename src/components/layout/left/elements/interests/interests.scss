@@ -6,10 +6,11 @@
 
   .interests__container-title {
     margin: 0;
-    font-weight: bold;
+    @include SFProBold();
   }
 
   ul {
+    @include SFProRegular();
     margin: 0;
     padding-left: 1.5rem;
   }

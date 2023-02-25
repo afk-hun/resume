@@ -19,6 +19,7 @@
     margin: 0;
     margin-bottom: 1rem;
     @include textJustifyLastLeft();
+    @include SFProLight();
   }
 }
 
@@ -27,5 +28,30 @@
     margin: 1rem 1rem 1rem 0;
     width: 100%;
     min-width: 28rem;
+
+    .rightpanel-name {
+      animation: toprightcorner 1000ms ease-out forwards;
+    }
+    .rightpanel__details {
+      animation: bottomrightcorner 1000ms ease-out forwards;
+    }
   }
+}
+
+@keyframes toprightcorner {
+  from{ 
+    transform: translate(10px, -10px);
+    opacity: 0;}
+  to{
+    transform: translate(0, 0);
+    opacity: 1;}
+}
+
+@keyframes bottomrightcorner {
+  from{ 
+    transform: translate(10px, 10px);
+    opacity: 0;}
+  to{
+    transform: translate(0, 0);
+    opacity: 1;}
 }

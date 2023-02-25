@@ -22,5 +22,30 @@
   .leftpanel {
     min-width: 20rem;
     height: 100%;
+
+    .image {
+      animation: topleftcorner 1000ms ease-out forwards;
+    }
+    .basics {
+      animation: bottomleftcorner 1000ms ease-out forwards;
+    }
   }
+}
+
+@keyframes topleftcorner {
+  from{ 
+    transform: translate(-10px, -10px);
+    opacity: 0;}
+  to{
+    transform: translate(0, 0);
+    opacity: 1;}
+}
+
+@keyframes bottomleftcorner {
+  from{ 
+    transform: translate(-10px, 10px);
+    opacity: 0;}
+  to{
+    transform: translate(0, 0);
+    opacity: 1;}
 }

@@ -1,18 +1,45 @@
+import Card from "../../../ui/card/Card";
 import "./contact.scss";
 
 type ContactProps = {
   imageSrc: string;
   text: string;
   hint?: string;
+  link?: string;
 };
 
 //todo hint, src fix
 function Contact(props: ContactProps) {
-  return (
+
+  const tooltip = (
+    <Card className="contact__container-tooltip">
+      {props.hint}
+    </Card>
+  );
+
+  const baseLayout = (
     <div className="contact__container">
-      <img></img>
-      <p>{props.text}</p>
+      <img className="contact__container-img" src={props.imageSrc} />
+      <p className="contact__container-text">
+        {props.hint && tooltip}
+        {props.text}
+      </p>
     </div>
+  );
+
+  const linkLayout = (
+    <a className="contact__link" href={props.link}>
+      {baseLayout}
+    </a>
+  );
+
+  return (
+    <div>
+      {props.link && linkLayout }
+      {!props.link && baseLayout }
+    </div>
+    
+    
   );
 }
 

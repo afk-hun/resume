@@ -1,6 +1,5 @@
 import ContactGroup from "./contact/ContactGroup";
 import WorkGroup from "./workexperience/WorkGroup";
-import "./rightPanel.scss";
 import SkillGroup from "./skills/SkillGroup";
 import Name from "./name/Name";
 import { useAppDispatch, useAppSelector } from "../../../store/resume-hooks";
@@ -14,6 +13,8 @@ import {
   selectExperience,
 } from "../../../store/experience/experience-slice";
 
+import "./rightPanel.scss";
+
 function RightPanel() {
   const dispatch = useAppDispatch();
   const person = useAppSelector(selectPersonBasics);
@@ -26,7 +27,7 @@ function RightPanel() {
 
   return (
     <div className="rightpanel">
-      <Name
+      <Name className="rightpanel-name"
         firstName={person.name.first_name}
         middleName={person.name.middle_name}
         lastName={person.name.last_name}

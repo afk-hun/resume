@@ -1,9 +1,5 @@
 import "./education.scss";
 
-type CoursesProps = {
-  courses: string[];
-};
-
 function Courses(props: { courses: string[] }) {
   return (
     <div className="education__container">

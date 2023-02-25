@@ -6,7 +6,7 @@ function LeftPanel() {
   return (
     <div className="leftpanel">
       <Pictures className="image" />
-      <BasicsContainer />
+      <BasicsContainer className="basics" />
     </div>
   );
 }

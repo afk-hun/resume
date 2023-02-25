@@ -27,7 +27,7 @@ function Pictures(props: PictureProps) {
   };
 
   return (
-    <Card className="picture">
+    <Card className={`picture ${props.className}`}>
       {/* <div
         className="picture"
         style={{ backgroundImage: `url("../../imgs/AFK_cv-1.jpg")` }}

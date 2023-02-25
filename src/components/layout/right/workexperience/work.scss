@@ -11,40 +11,47 @@
 
   .work__container-interval {
     margin: 0;
-    min-width: 8rem;
+    min-width: 7rem;
+    @include SFProBold();
   }
 
-  .wok_container-details {
+  .work_container-details {
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
 
-    .wok_container-details-title {
+    .work_container-details-title {
       display: flex;
-      text-transform: uppercase;
+      flex-direction: column;
 
-      .wok_container-details-title-position {
+      .work_container-details-title-position {
+        @include SFProBold();
+        text-transform: uppercase;
       }
-      .wok_container-details-title-unit {
+      .work_container-details-title-unit {
+        margin-left: $textSpace;
+        font-size: 0.8rem;
+        text-align: right;
+      }
+    }
+
+    .work_container-details-location {
+      display: flex;
+      @include SFProMediumItalic();
+
+      .work_container-details-location-company {
+        text-transform: uppercase;
+      }
+      .work_container-details-location-place {
         margin-left: $textSpace;
       }
     }
 
-    .wok_container-details-location {
-      display: flex;
-      text-transform: uppercase;
-
-      .wok_container-details-location-company {
-      }
-      .wok_container-details-location-place {
-        margin-left: $textSpace;
-      }
-    }
-
-    .wok_container-details-description {
+    .work_container-details-description {
       margin: 0;
       margin-bottom: 0.5rem;
       @include textJustifyLastLeft();
+      @include SFProLight();
     }
   }
 }
@@ -52,5 +59,29 @@
 @media (min-width: 40rem) {
   .work__container {
     flex-direction: row;
+    .work_container-details {
+      .work_container-details-title {
+        flex-direction: column;
+
+        .work_container-details-title-unit {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 55rem) {
+  .work__container {
+    flex-direction: row;
+    .work_container-details {
+      .work_container-details-title {
+        flex-direction: row;
+
+        .work_container-details-title-unit {
+          text-align: left;
+        }
+      }
+    }
   }
 }

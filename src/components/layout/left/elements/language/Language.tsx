@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./language.scss";
 
 type LanguageProps = {
@@ -7,8 +8,17 @@ type LanguageProps = {
 };
 
 function Language(props: LanguageProps) {
-  const knowledgeWidth = `${props.knowledge}%`;
-  const motivationWidth = `${props.motivation}%`;
+
+  const [knowledgeWidth, setKnowledgeWidth] = useState(0);
+  const [motivationWidth, setMotivationWidth] = useState(0);
+
+  //const knowledgeWidth = `${props.knowledge}%`;
+  //const motivationWidth = `${props.motivation}%`;
+
+  useEffect(() => {
+    setKnowledgeWidth(props.knowledge);
+    setMotivationWidth(props.motivation);
+  },[props, knowledgeWidth, motivationWidth])
 
   return (
     <div className="language__container">
@@ -16,11 +26,11 @@ function Language(props: LanguageProps) {
       <div className="language__container-colorbox">
         <div
           className="language__container-colorbox-knowledge"
-          style={{ width: knowledgeWidth }}
+          style={{ width: `${knowledgeWidth}%` }}
         />
         <div
           className="language__container-colorbox-motivation"
-          style={{ width: motivationWidth }}
+          style={{ width: `${motivationWidth}%` }}
         />
       </div>
     </div>
