@@ -22,7 +22,7 @@ export const getInterestsData = createAsyncThunk(
       title: data.title,
       todo: data.todo,
     };
-    return data;
+    return interests;
   }
 );
 const interestsSlice = createSlice({

@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,7 +8,8 @@ import MainPage from "./MainPage";
 import ResumePage from "./ResumePage";
 
 //export const domainLink = "http://192.168.0.47:3000/resume.json";
-export const domainLink = "http://localhost:3000/resume.json";
+//export const domainLink = "http://localhost:3000/resume.json";
+export const domainLink = "https://raw.githubusercontent.com/afk-hun/resume/deploy/public/resume.json";
 
 const router = createBrowserRouter([
   { path: "/", element: <MainPage />},

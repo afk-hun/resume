@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store/resume-store";
+// import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,9 +14,12 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    {/* <HashRouter> */}
     <Provider store={store}>
-      <App />
+        <App />
+      
     </Provider>
+    {/* </HashRouter> */}
   </React.StrictMode>
 );
 

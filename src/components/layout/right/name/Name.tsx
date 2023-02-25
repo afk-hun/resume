@@ -1,10 +1,3 @@
-import { useEffect } from "react";
-import {
-  getPersonData,
-  selectPersonBasics,
-} from "../../../../store/basic-infos/basic-info-slice";
-import { useAppDispatch, useAppSelector } from "../../../../store/resume-hooks";
-
 import Card from "../../../ui/card/Card";
 
 import "./name.scss";
