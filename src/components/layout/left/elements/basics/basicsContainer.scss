@@ -1,19 +1,20 @@
 @import "../../../../../styles/variables.scss";
 
 .basics__container {
-  background: $sidePanel;
+  //background: $sidePanel;
+  background: linear-gradient(-103deg, $color4a, $color3a);
   display: flex;
   flex-direction: column;
   padding: $cornerRadius;
 
   .basics__container-section {
     @include sectionTitle();
-    color: $colorSecondary;
+    color: $color1;
   }
   .basics__container-drivinglic {
     font-size: 1rem;
     @include SFProRegular();
-    color: $colorTertiary;
+    color: $color1p;
     margin: 0;
     margin-bottom: 1rem;
     margin-left: $detailsPadding;

@@ -44,12 +44,40 @@ $link: "http://localhost:3000/";
 // colors
 $mainBackground: #fff;
 
-$titlePanel: #99c4c8;
-$sidePanel: #32667a;
+// $titlePanel: #99c4c8;
+// $sidePanel: #32667a;
 
-$colorMain: #32667a;
-$colorSecondary: #e3f5fc;
-$colorTertiary: #eee4ab;
+// $colorMain: #32667a;
+// $colorSecondary: #e3f5fc;
+// $colorTertiary: #eee4ab;
+
+$color1: #122C34;
+$color2: #224870;
+$color3: #2a4494;
+$color4: #4ea6d9;
+$color5: #44CFCB;
+
+$color1a: #122c34a3;
+$color2a: #224870b1;
+$color3a: #2a4494c9;
+$color4a: #4ea6d9c7;
+$color5a: #44cfcaa2;
+
+$color1p: #bfe6fb;
+$color2p: #93C6E7;
+
+
+// $color1: #5800FF;
+// $color2: #0096FF;
+// $color3: #00D7FF;
+// $color4: #72FFFF;
+
+$titlePanel:$color4;
+$sidePanel: $color4;
+
+$colorMain: $color2;
+$colorSecondary: $color3;
+$colorTertiary: $color2;
 
 // layout properties
 $cornerRadius: 2rem;

@@ -20,10 +20,10 @@ function Contact(props: ContactProps) {
   const baseLayout = (
     <div className="contact__container">
       <img className="contact__container-img" src={props.imageSrc} />
-      <p className="contact__container-text">
+      <div className="contact__container-text">
         {props.hint && tooltip}
         {props.text}
-      </p>
+      </div>
     </div>
   );
 

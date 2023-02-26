@@ -7,23 +7,23 @@
   @include SFProRegular();
 
   .language__container-title {
-    color: $colorTertiary;
+    color: $color1p;
     margin: 0 0 0.3rem 0;
   }
 
   .language__container-colorbox {
     display: flex;
     flex-direction: column;
-    background: $colorSecondary;
+    background: $color1p;
 
     .language__container-colorbox-knowledge {
-      background: $titlePanel;
+      background: $color2p;
       height: 0.7rem;
       transition: all 1000ms ease-in;
     }
 
     .language__container-colorbox-motivation {
-      background: $colorTertiary;
+      background: $color3a;
       height: 0.7rem;
       transition: all 1000ms ease-in;
     }

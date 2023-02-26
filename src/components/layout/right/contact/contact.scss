@@ -5,6 +5,7 @@
 .contact__link:hover,
 .contact__link:active {
   text-decoration: none;
+  color: $color2;
 }
 
 .contact__container {
@@ -22,7 +23,8 @@
     position: absolute;
     margin-top: -3.3rem;
     padding: 0.7rem;
-    background-color: $colorSecondary;
+    background-color: $color1p;
+    text-decoration: none;
   }
 
   p {
@@ -35,6 +37,7 @@
   .contact__container {
     .contact__container-text:hover .contact__container-tooltip {
       animation: fadein 500ms ease-out forwards;
+      text-decoration: none;
     }
   }
 }
