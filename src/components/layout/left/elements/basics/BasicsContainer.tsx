@@ -49,7 +49,7 @@ function BasicsContainer(props: {className: string}) {
       <p className="basics__container-section">Languages</p>
       <LangugaesContainer languages={education.languages} />
 
-      <p className="basics__container-section">Driveing licese</p>
+      <p className="basics__container-section">Driving licese</p>
       <p className="basics__container-drivinglic">{education.driving_lic}</p>
 
       <p className="basics__container-section">Interests</p>
