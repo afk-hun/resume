@@ -19,6 +19,7 @@ type EducationType = {
   courses: string[];
   languages: LanguagesType[];
   driving_lic: string;
+  status: "success" | "fail" | "unknown";
 };
 
 const initialState: EducationType = {
@@ -26,6 +27,7 @@ const initialState: EducationType = {
   courses: [],
   languages: [],
   driving_lic: "",
+  status: "unknown",
 };
 
 export const getEducationData = createAsyncThunk(
@@ -41,6 +43,7 @@ export const getEducationData = createAsyncThunk(
       courses: data.courses,
       languages: data.languages,
       driving_lic: data.driving_license,
+      status: "success",
     };
     return education;
   }
@@ -57,6 +60,7 @@ const educationSlice = createSlice({
       state.courses = action.payload.courses;
       state.languages = action.payload.languages;
       state.driving_lic = action.payload.driving_lic;
+      state.status = action.payload.status;
     });
   },
 });

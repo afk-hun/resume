@@ -7,7 +7,13 @@ type PictureProps = {
 
 function Pictures(props: PictureProps) {
   return (
-    <Card className={`picture ${props.className}`}>
+    <Card className={`picture__container ${props.className}`}>
+      <div
+        className="picture__main"
+        style={{
+          background: `url(${process.env.PUBLIC_URL}/imgs/AFK_cv-1.jpg)`,
+        }}
+      ></div>
     </Card>
   );
 }

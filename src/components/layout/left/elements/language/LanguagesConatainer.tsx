@@ -19,7 +19,7 @@ function LangugaesContainer(props: { languages: LanguagesType[] }) {
       <div className="languages__container-hint">
         <p className="languages__container-hint-knowledge">knowledge</p>
         <p className="languages__container-hint-motivation">
-          motivation to imporove
+          motivation to improve
         </p>
       </div>
     </div>

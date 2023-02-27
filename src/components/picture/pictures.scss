@@ -1,19 +1,22 @@
-.picture {
+.picture__container {
+  width: 80%;
+  height: 23rem;
   margin-bottom: 1rem;
+}
+
+.picture__main {
   margin-left: auto;
   margin-right: auto;
-  background: url("https://raw.githubusercontent.com/afk-hun/resume/deploy/public/imgs/AFK_cv-1.jpg");
+  //background: url("https://raw.githubusercontent.com/afk-hun/resume/deploy/public/imgs/AFK_cv-1.jpg");
   background-position: center;
   background-position-y: top;
   background-origin: border-box;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 80%;
-  height: 23rem;
 }
 
 @media (min-width: 40rem) {
-  .picture {
+  .picture__container {
     height: 20rem;
     width: 100%;
   }

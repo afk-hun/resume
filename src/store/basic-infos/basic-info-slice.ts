@@ -20,6 +20,7 @@ export type PersonBasics = {
   role: string;
   about_me: string;
   contact: ContactType;
+  status: "success" | "fail" | "unknown";
 };
 
 const initialState: PersonBasics = {
@@ -27,12 +28,17 @@ const initialState: PersonBasics = {
   role: "role",
   about_me: "aboutme",
   contact: { mail: "mail", phone: "phone", location: "city", linkedin: "link" },
+  status: "unknown",
 };
 
 export const getPersonData = createAsyncThunk(
   "basicInfos/fetchData",
   async () => {
     const response = await (await fetch(domainLink)).json();
+
+    if (!response.ok) {
+      // TODO handling error
+    }
 
     const data = await response.afk.basic_infos;
     console.log(data);
@@ -51,6 +57,7 @@ export const getPersonData = createAsyncThunk(
         location: data.contact.location,
         linkedin: data.contact.linkedin,
       },
+      status: "success",
     };
     return person;
   }
@@ -67,6 +74,7 @@ const basicInfoSlice = createSlice({
       state.role = action.payload.role;
       state.contact = action.payload.contact;
       state.about_me = action.payload.about_me;
+      state.status = action.payload.status;
     });
   },
 });

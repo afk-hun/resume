@@ -9,7 +9,6 @@ type ContactProps = {
   alt?: string;
 };
 
-//todo hint, src fix
 function Contact(props: ContactProps) {
   const tooltip = (
     <Card className="contact__container-tooltip">{props.hint}</Card>

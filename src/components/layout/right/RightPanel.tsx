@@ -26,27 +26,32 @@ function RightPanel() {
   }, [dispatch]);
 
   return (
-    <div className="rightpanel">
-      <Name className="rightpanel-name"
-        firstName={person.name.first_name}
-        middleName={person.name.middle_name}
-        lastName={person.name.last_name}
-        role={person.role}
-      />
-      <div className="rightpanel__details">
-        <ContactGroup
-          mail={person.contact.mail}
-          phone={person.contact.phone}
-          linkedin={person.contact.linkedin}
-          city={person.contact.location}
-        />
-        <p className="rightpanel__details-section">About me</p>
-        <p className="rightpanel__details-aboutme">{person.about_me}</p>
-        <p className="rightpanel__details-section">Work Experience</p>
-        <WorkGroup works={experience.experience} />
-        <p className="rightpanel__details-section">Skills</p>
-        <SkillGroup skills={experience.skills} />
-      </div>
+    <div>
+      {person.status === "success" && (
+        <div className="rightpanel">
+          <Name
+            className="rightpanel-name"
+            firstName={person.name.first_name}
+            middleName={person.name.middle_name}
+            lastName={person.name.last_name}
+            role={person.role}
+          />
+          <div className="rightpanel__details">
+            <ContactGroup
+              mail={person.contact.mail}
+              phone={person.contact.phone}
+              linkedin={person.contact.linkedin}
+              city={person.contact.location}
+            />
+            <p className="rightpanel__details-section">About me</p>
+            <p className="rightpanel__details-aboutme">{person.about_me}</p>
+            <p className="rightpanel__details-section">Work Experience</p>
+            <WorkGroup works={experience.experience} />
+            <p className="rightpanel__details-section">Skills</p>
+            <SkillGroup skills={experience.skills} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
