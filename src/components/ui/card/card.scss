@@ -3,4 +3,5 @@
 .card {
   border-radius: $cornerRadius;
   box-shadow: 2px 2px 2px rgba($color: $colorMain, $alpha: 0.25);
+  overflow: hidden;
 }
