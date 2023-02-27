@@ -6,20 +6,22 @@ type ContactProps = {
   text: string;
   hint?: string;
   link?: string;
+  alt?: string;
 };
 
 //todo hint, src fix
 function Contact(props: ContactProps) {
-
   const tooltip = (
-    <Card className="contact__container-tooltip">
-      {props.hint}
-    </Card>
+    <Card className="contact__container-tooltip">{props.hint}</Card>
   );
 
   const baseLayout = (
     <div className="contact__container">
-      <img className="contact__container-img" src={props.imageSrc} />
+      <img
+        className="contact__container-img"
+        src={props.imageSrc}
+        alt={props.alt}
+      />
       <div className="contact__container-text">
         {props.hint && tooltip}
         {props.text}
@@ -35,11 +37,9 @@ function Contact(props: ContactProps) {
 
   return (
     <div>
-      {props.link && linkLayout }
-      {!props.link && baseLayout }
+      {props.link && linkLayout}
+      {!props.link && baseLayout}
     </div>
-    
-    
   );
 }
 

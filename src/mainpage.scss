@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
-.main_page__container{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    text-align:center;
+.main_page__container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    p {
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 3rem;
-        font-weight: 600;
-        // background: linear-gradient(0.25turn, #003399, #ffcc00);
-        background: -webkit-linear-gradient(45deg, #003399, #ffcc00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+  p {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    // background: linear-gradient(0.25turn, #003399, #ffcc00);
+    background: -webkit-linear-gradient(45deg, #003399, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
