@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "https://akoskalamar.com/static/css/main.cb351570.css",
+    "main.js": "https://akoskalamar.com/static/js/main.9e4f56db.js",
+    "static/js/787.e9dcdb9d.chunk.js": "https://akoskalamar.com/static/js/787.e9dcdb9d.chunk.js",
+    "index.html": "https://akoskalamar.com/index.html",
+    "main.cb351570.css.map": "https://akoskalamar.com/static/css/main.cb351570.css.map",
+    "main.9e4f56db.js.map": "https://akoskalamar.com/static/js/main.9e4f56db.js.map",
+    "787.e9dcdb9d.chunk.js.map": "https://akoskalamar.com/static/js/787.e9dcdb9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb351570.css",
+    "static/js/main.9e4f56db.js"
+  ]
+}
