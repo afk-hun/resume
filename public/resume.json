@@ -5,7 +5,7 @@
       "middle_name": "Ferenc",
       "last_name": "Kalamár",
       "role": "Software engineer",
-      "about_me": "I'm a developer who is trying himself in many different roles. I like to be a part of new projects, come up with new ideas and accomplish them. I like to work in a cheerful environment, however, it is important for me to have space where I can focus on my tasks. If you see a camera in my hand, don’t panic it is my guilty pleasure. It helps me to be more creative in life.",
+      "about_me": "I'm a developer who is trying himself in various roles. I thoroughly enjoy to be a part of new projects, suggesting new ideas and implement them. I like to work in a cheerful environment, however, it is important for me to have some space where I can focus on my tasks. If you see a camera in my hand, don’t panic, it is my guilty pleasure. Photography helps me to maintain my creative side by capturing and presenting unique moments in life.",
       "contact": {
         "mail": "akos.kalamar@gmail.com",
         "phone": "+36706078765",
@@ -21,7 +21,7 @@
           "unit": "Navigation Unit",
           "company": "NNG LLC",
           "place": "Budapest, Hungary",
-          "description": "Development, maintenance and customization of our navigation software for our customers (Java, C++, X-Script). | I have become one of the key members of our SDK and API development team. I have prepared more than 90% of the android sdk and the sample app which belongs to it. As an extension of our documentation this app is a guide on how to use our SDK."
+          "description": "Development, maintenance and customization of our navigation software for our customers (Java, C++, X-Script).|In the past couple of years I have become one of the key members of our SDK and API development team. I have prepared more than 90% of the Android SDK and its sample app. As an extension of our documentation this app is a guide on how to use our SDK."
         },
         {
           "interval": "2019-2020",
@@ -29,7 +29,7 @@
           "unit": "Automotive Unit",
           "company": "NNG LLC",
           "place": "Budapest, Hungary",
-          "description": "This is one of the best periods of my career. I was a member of an innovation team that worked on a new era of cars infotainment system. We prepared the UX/UI design front-end, back-end and embedded development."
+          "description": "This has been probably the most gratifying period of my career so far. As a member of an innovation team I worked on a new generation of our car infotainment system. We prepared the UX/UI design front-end, back-end and embedded development."
         },
         {
           "interval": "2018-2019",
@@ -37,7 +37,7 @@
           "unit": "Navigation Unit",
           "company": "NNG LLC",
           "place": "Budapest, Hungary",
-          "description": "I have gained experience in development of iGO front-end. How to use our custom UIML markup language and how to give soul to the layout with Lua script. I worked on many interesting projects of our customers like SAIC Motors, Pioneer or Ferrari."
+          "description": "I have gained experience in the development of the iGO front-end. How to use our custom UIML markup language and how to give soul to the layout with Lua script. I was fortunate to work on many interesting projects of our customers like SAIC Motors, Pioneer or Ferrari."
         },
         {
           "interval": "2015-2018",
@@ -45,7 +45,7 @@
           "unit": "",
           "company": "LOGIPIX",
           "place": "Budapest, Hungary",
-          "description": "Windows application development (in Delphi) for security cameras, traffic and parking observation system. With this application the end-user can handle and supervise camera images and nvr system."
+          "description": "At LOGIPIX I worked on Windows application development (in Delphi) for security cameras, traffic and parking observation system. This application enables the end user to handle and supervise camera images and NVR system."
         }
       ],
 
