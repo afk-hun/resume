@@ -1,4 +1,4 @@
-# Hej, jag heter Ákos och välkommen 👋
+# Hej och välkommen, jag heter Ákos. 👋
 
 ## 🚀 About Me
 
