@@ -33,7 +33,6 @@ At the moment you have to checkout the main branch and use the good old `  npm i
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=&logo=jest&logoColor=white)
 
 </div>
-<br />
 
 and what I don't wanna talk about 🤪
 
