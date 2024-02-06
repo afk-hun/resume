@@ -34,7 +34,7 @@ At the moment you have to checkout the main branch and use the good old `$ npm i
 
 </div>
 
-and what I don't wanna talk about 🤪
+and what I don't wanna talk about 🤪 (I'm just kidding)
 
 <div style="display: flex; flex-direction: column; gap:5px; padding-left: 20px">
 
