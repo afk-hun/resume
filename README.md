@@ -20,7 +20,7 @@ I know, I do a very big change from a slow and left behind industry to the cutti
 ## 💻 What the hack is ...
 
 This repository try to introduce my current knowledge and experience about React development.
-At the moment you have to checkout the main branch and use the good old `  npm i` `  npm start` commands in terminal.
+At the moment you have to checkout the main branch and use the good old `$ npm i` `$ npm start` commands in terminal.
 
 ## 🛠 Skills
 
