@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import RickAndMortyPage from "./pages/RickAndMortyPage";
 
 const Div = styled.div`
   display: flex;
@@ -10,7 +11,12 @@ const Div = styled.div`
 `;
 
 function App() {
-  return <Div> Hej och trevligt att träffas! </Div>;
+  return (
+    <>
+      <Div> Hej och trevligt att träffas! </Div>
+      <RickAndMortyPage />
+    </>
+  );
 }
 
 export default App;
