@@ -1,20 +1,31 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import RickAndMortyPage, { routerConfig } from "../RickAndMortyPage";
 import { RouterProvider, createMemoryRouter } from "react-router";
 import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 
+import { mockCharacters } from "./mock";
+import { setupServer } from "msw/node";
+import { rest } from "msw";
+
 type Page = [page: string];
 type PageWithId = [page: string, testId: string];
 type LinkWithId = [link: string, testId: string];
 type PageWithIdAndLink = [page: string, testId: string, link: string];
 
+const server = setupServer(
+  rest.get("https://rickandmortyapi.com/api/character", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(mockCharacters));
+  })
+);
+
+beforeAll(() => server.listen());
+afterAll(() => server.close());
+
 const setup = (path: string) => {
   const router = createMemoryRouter(routerConfig, {
     initialEntries: [path],
   });
-
   render(<RouterProvider router={router} />);
 };
 describe("Rick and Morty page", () => {
@@ -47,13 +58,13 @@ describe("Rick and Morty page", () => {
     ["Characters", "rm-characters"],
     ["Locations", "rm-locations"],
     ["Episodes", "rm-episodes"],
-  ])("clicks %s after display %s test id", (page, testId) => {
+  ])("clicks %s after display %s test id", async (page, testId) => {
     setup("/");
     const link = screen.queryByRole("link", { name: page });
     act(() => {
       userEvent.click(link!);
     });
-    const itemTestId = screen.queryByTestId(testId!);
+    const itemTestId = await screen.findByTestId(testId!);
     expect(itemTestId).toBeInTheDocument();
   });
 

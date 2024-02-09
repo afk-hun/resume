@@ -107,17 +107,7 @@ export type CharacterCardProps = {
 };
 
 export function CharacterCard(props: CharacterCardProps) {
-  const {
-    name,
-    status,
-    species,
-    type,
-    gender,
-    origin,
-    location,
-    image,
-    ...rest
-  } = props;
+  const { name, status, species, gender, origin, location, image } = props;
   return (
     <Container>
       <Content>
