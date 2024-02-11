@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-import skeletonImg from "../../asset/skeleton.jpeg";
+import { MouseEvent } from "react";
+import skeletonImg from "../../../asset/skeleton.jpeg";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -86,7 +86,17 @@ const Anchor = styled.a`
   font-weight: 300;
 `;
 
-export type CharacterCardProps = {
+const More = styled.a`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  color: #887bb0;
+  font-weight: 500;
+  cursor: pointer;
+`;
+
+export type CharacterType = {
   id: number;
   name: string;
   status: string;
@@ -106,10 +116,21 @@ export type CharacterCardProps = {
   url: string;
 };
 
+export type CharacterCardProps = {
+  character: CharacterType;
+  onCLick: (characterData: CharacterType) => void;
+};
+
 export function CharacterCard(props: CharacterCardProps) {
-  const { name, status, species, gender, origin, location, image } = props;
+  const { name, status, species, gender, origin, location, image } =
+    props.character;
+
+  function onClickHandler(_event: MouseEvent<HTMLAnchorElement>): void {
+    props.onCLick(props.character);
+  }
   return (
     <Container>
+      <More onClick={onClickHandler}>More</More>
       <Content>
         <Name>{name}</Name>
         <Extracts>

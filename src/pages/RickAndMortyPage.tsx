@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router";
 import Navbar from "../components/rick-and-morty/Navbar";
 import { createBrowserRouter } from "react-router-dom";
-import Characters from "../components/rick-and-morty/Characters";
+import Characters from "../components/rick-and-morty/Characters/Characters";
 import Locations from "../components/rick-and-morty/Locations";
 import Episodes from "../components/rick-and-morty/Episodes";
 import styled from "styled-components";
@@ -15,7 +15,7 @@ export const routerConfig = [
     path: "/",
     element: <Navbar />,
     children: [
-      { path: "/characters", element: <Characters /> },
+      { path: "/characters/", element: <Characters /> },
       { path: "/locations", element: <Locations /> },
       { path: "/episodes", element: <Episodes /> },
     ],

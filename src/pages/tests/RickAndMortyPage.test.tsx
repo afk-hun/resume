@@ -14,7 +14,7 @@ type LinkWithId = [link: string, testId: string];
 type PageWithIdAndLink = [page: string, testId: string, link: string];
 
 const server = setupServer(
-  rest.get("https://rickandmortyapi.com/api/character", (req, res, ctx) => {
+  rest.get(`https://rickandmortyapi.com/api/character`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(mockCharacters));
   })
 );
@@ -68,5 +68,30 @@ describe("Rick and Morty page", () => {
     expect(itemTestId).toBeInTheDocument();
   });
 
-  it("displays 'No character found' in case no network", () => {});
+  describe("Characters page", () => {
+    it("displays Character 1 on the first load", async () => {
+      setup("/characters");
+      const character1 = await screen.findByText("Character 1");
+      expect(character1).toBeInTheDocument();
+    });
+
+    xit("displays next page button", () => {
+      setup("/characters");
+      const nextButton = screen.getByRole("button", { name: "next >" });
+      expect(nextButton).toBeInTheDocument();
+    });
+
+    xit("loads next page after click next page button", async () => {
+      setup("/characters");
+      const character1 = await screen.findByText("Character 1");
+      expect(character1).toBeInTheDocument();
+      const nextButton = screen.getByRole("button", { name: "next >" });
+      act(() => {
+        userEvent.click(nextButton);
+      });
+      const character5 = await screen.findByText("Character 5");
+      expect(character5).toBeInTheDocument();
+      expect(nextButton).toBeInTheDocument();
+    });
+  });
 });

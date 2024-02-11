@@ -5,7 +5,6 @@ const Section = styled.section`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0 2rem 0;
   gap: 2rem 0;
 `;
 const NavDiv = styled.div`
