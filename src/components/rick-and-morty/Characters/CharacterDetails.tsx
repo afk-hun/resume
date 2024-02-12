@@ -4,6 +4,7 @@ import skeletonImage from "../../../asset/skeleton.jpeg";
 import { CharacterType } from "./CharacterCard";
 import { useEffect, useState } from "react";
 import { getEpisodesByLinks } from "../../../api/rickAndMortyCalls";
+import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
 
 const DetailsContainer = styled.div`
   background-color: #fff4bd;
@@ -106,6 +107,13 @@ const Close = styled.a`
   color: #887bb0;
   font-weight: 800;
   cursor: pointer;
+  border: #887bb0 1px solid;
+
+  &:hover {
+    border: #fff4bd 1px solid;
+    background-color: #887bb0;
+    color: #fff4bd;
+  }
 `;
 
 export type EpisodeType = {
@@ -185,19 +193,19 @@ export default function CharacterDetails(props: CharacterDetailsProps) {
       </ExtractsContainer>
       <ExtractsContainer>
         <ExtractsTitle>Species:</ExtractsTitle>
-        <Extracts>{species}</Extracts>
+        <Extracts>{useDefaultIfUnknown(species, "Uncategorised")}</Extracts>
       </ExtractsContainer>
       <ExtractsContainer>
         <ExtractsTitle>Gender:</ExtractsTitle>
-        <Extracts>{gender}</Extracts>
+        <Extracts>{useDefaultIfUnknown(gender, "Uncategorised")}</Extracts>
       </ExtractsContainer>
       <ExtractsContainer>
         <ExtractsTitle>Origin:</ExtractsTitle>
-        <Extracts>{origin.name}</Extracts>
+        <Extracts>{useDefaultIfUnknown(origin.name, "-")}</Extracts>
       </ExtractsContainer>
       <ExtractsContainer>
         <ExtractsTitle>Location:</ExtractsTitle>
-        <Extracts>{location.name}</Extracts>
+        <Extracts>{useDefaultIfUnknown(location.name, "-")}</Extracts>
       </ExtractsContainer>
       {/* it will be a list */}
 

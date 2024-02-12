@@ -12,13 +12,35 @@ const NavDiv = styled.div`
   justify-content: space-around;
 `;
 
+const NavLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  width: 7rem;
+  text-decoration: none;
+  color: #fff4bd;
+  border-radius: 4px;
+  border: #fff4bd 2px solid;
+  padding: 1rem;
+  background-color: #887bb0;
+
+  &:hover {
+    background-color: #fff4bd;
+    border: #887bb0 2px solid;
+    color: #887bb0;
+  }
+
+  &:active {
+    background-color: #dbcf97;
+  }
+`;
+
 export default function Navbar() {
   return (
     <Section>
       <NavDiv>
-        <Link to="characters">Characters</Link>
-        <Link to="locations">Locations</Link>
-        <Link to="episodes">Episodes</Link>
+        <NavLink to="characters">Characters</NavLink>
+        <NavLink to="locations">Locations</NavLink>
+        <NavLink to="episodes">Episodes</NavLink>
       </NavDiv>
       <div>
         <Outlet />

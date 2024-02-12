@@ -1,66 +1,21 @@
 import { MouseEvent, useEffect, useState } from "react";
 import { CharacterCard, CharacterType } from "./CharacterCard";
-import {
-  getCharactersByLink,
-  getCharacters,
-} from "../../../api/rickAndMortyCalls";
+import { getDataByLink, getCharacters } from "../../../api/rickAndMortyCalls";
 import styled from "styled-components";
 
 import CharacterDetails from "./CharacterDetails";
-
-const Modal = styled.div`
-  display: flex;
-  position: fixed;
-  justify-items: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #85d2d087;
-  width: 100wh;
-`;
-
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-`;
+import {
+  Modal,
+  Navigation,
+  NavigationButton,
+  Section,
+} from "../Common/StyledElements";
 
 const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
-`;
-
-const Navigation = styled.div`
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-  gap: 1rem;
-`;
-
-const NavigationButton = styled.button`
-  box-sizing: border-box;
-  border: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #887bb0;
-  color: #fff4bd;
-  width: 6rem;
-  height: 2rem;
-  align-self: flex-end;
-  border-radius: 4px;
-
-  &:hover {
-    border: 1px solid #fff4bd;
-    cursor: pointer;
-  }
-
-  &:active {
-    background-color: #665c84;
-  }
 `;
 
 export default function Characters() {
@@ -87,7 +42,7 @@ export default function Characters() {
 
   async function nextPageHandler(_event: MouseEvent<HTMLButtonElement>) {
     try {
-      const data = await getCharactersByLink(nextPage!);
+      const data = await getDataByLink(nextPage!);
       setCharacters(data.results as CharacterType[]);
       setNextPage(data.info.next);
       setPreviousPage(data.info.prev);
@@ -96,7 +51,7 @@ export default function Characters() {
 
   async function previousPageHandler(_event: MouseEvent<HTMLButtonElement>) {
     try {
-      const data = await getCharactersByLink(previousPage!);
+      const data = await getDataByLink(previousPage!);
       setCharacters(data.results as CharacterType[]);
       setNextPage(data.info.next);
       setPreviousPage(data.info.prev);
@@ -108,7 +63,7 @@ export default function Characters() {
     setShowModal(true);
   }
 
-  function modalClickHandler(event: MouseEvent<HTMLAnchorElement>) {
+  function closeEventHandler(event: MouseEvent<HTMLAnchorElement>) {
     setShowModal(false);
     setCharacterData(null);
   }
@@ -142,7 +97,7 @@ export default function Characters() {
 
       {showModal && (
         <Modal>
-          <CharacterDetails onClick={modalClickHandler} {...characterData!} />
+          <CharacterDetails onClick={closeEventHandler} {...characterData!} />
         </Modal>
       )}
     </Section>

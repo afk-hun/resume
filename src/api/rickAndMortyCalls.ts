@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export async function getCharactersByLink(link: string) {
+export async function getDataByLink(link: string) {
   return axios.get(link).then((res) => res.data);
 }
 
+// characters APIs
 export async function getCharacters() {
   return axios
     .get(
@@ -13,6 +14,14 @@ export async function getCharacters() {
     .then((res) => res.data);
 }
 
+// locations APIs
+export async function getLocations() {
+  return axios
+    .get("https://rickandmortyapi.com/api/location")
+    .then((res) => res.data);
+}
+
+// episodes APIs
 export async function getEpisodeByLink(link: string) {
   return axios.get(link).then((res) => res.data);
 }
