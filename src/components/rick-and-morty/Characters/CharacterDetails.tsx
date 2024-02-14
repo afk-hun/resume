@@ -3,7 +3,7 @@ import { MouseEvent } from "react";
 import skeletonImage from "../../../asset/skeleton.jpeg";
 import { CharacterType } from "./CharacterCard";
 import { useEffect, useState } from "react";
-import { getEpisodesByLinks } from "../../../api/rickAndMortyCalls";
+import { getDatasByLinks, getDataByLink } from "../../../api/rickAndMortyCalls";
 import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
 
 const DetailsContainer = styled.div`
@@ -176,7 +176,7 @@ export default function CharacterDetails(props: CharacterDetailsProps) {
   useEffect(() => {
     const fetchEpisodes = async () => {
       try {
-        const response = await getEpisodesByLinks(episode);
+        const response = await getDatasByLinks(episode, getDataByLink);
 
         setEpisodes(response as EpisodeType[]);
       } catch {}

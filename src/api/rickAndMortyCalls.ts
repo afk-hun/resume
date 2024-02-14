@@ -4,6 +4,23 @@ export async function getDataByLink(link: string) {
   return axios.get(link).then((res) => res.data);
 }
 
+export async function getDatasByLinks(
+  links: string[],
+  fetcher: (link: string) => Promise<any>
+) {
+  let promises = [];
+  for (let i = 0; i < links.length; i++) {
+    promises.push(fetcher(links[i]));
+  }
+  return Promise.all(promises)
+    .then(function handleData(data) {
+      return data;
+    })
+    .catch(function handleError(error) {
+      console.log("Error" + error);
+    });
+}
+
 // characters APIs
 export async function getCharacters() {
   return axios
@@ -22,20 +39,14 @@ export async function getLocations() {
 }
 
 // episodes APIs
-export async function getEpisodeByLink(link: string) {
-  return axios.get(link).then((res) => res.data);
+export async function getEpisods() {
+  return axios
+    .get("https://rickandmortyapi.com/api/episode")
+    .then((res) => res.data);
 }
 
-export async function getEpisodesByLinks(links: string[]) {
-  let promises = [];
-  for (let i = 0; i < links.length; i++) {
-    promises.push(getEpisodeByLink(links[i]));
-  }
-  return Promise.all(promises)
-    .then(function handleData(data) {
-      return data;
-    })
-    .catch(function handleError(error) {
-      console.log("Error" + error);
-    });
+export async function getEpisodeBySeason(season: number) {
+  return axios
+    .get("https://rickandmortyapi.com/api/episode/?episode=S0" + season)
+    .then((res) => res.data);
 }

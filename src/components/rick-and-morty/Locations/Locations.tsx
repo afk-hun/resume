@@ -48,19 +48,18 @@ const TableHeaderType = styled.h1`
   margin: 0;
   min-width: 150px;
   font-weight: 600;
-  min-width: 200px;
+  min-width: 150px;
 `;
 const TableHeaderDimension = styled.h1`
   display: flex;
   justify-content: flex-start;
   margin: 0;
-  min-width: 80px;
   font-weight: 600;
-  min-width: 250px;
+  min-width: 200px;
 `;
 
 const TableHeaderEmpty = styled.h1`
-  min-width: 50px;
+  min-width: 80px;
 `;
 
 export type LocationType = {
