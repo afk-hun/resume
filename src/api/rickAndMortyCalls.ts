@@ -45,6 +45,20 @@ export async function getEpisods() {
     .then((res) => res.data);
 }
 
+export async function getSeasons(callback: (data: Promise<any>) => void) {
+  let i = 1;
+  let isError = false;
+  while (!isError) {
+    try {
+      const data = await getEpisodeBySeason(i);
+      callback(data);
+      i++;
+    } catch {
+      isError = true;
+    }
+  }
+}
+
 export async function getEpisodeBySeason(season: number) {
   return axios
     .get("https://rickandmortyapi.com/api/episode/?episode=S0" + season)

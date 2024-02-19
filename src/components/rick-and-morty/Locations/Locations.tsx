@@ -73,7 +73,6 @@ export type LocationType = {
 };
 
 export default function Locations() {
-  const [showModal, setShowModal] = useState<boolean>(false);
   const [nextPage, setNextPage] = useState<string | null>(null);
   const [previousPage, setPreviousPage] = useState<string | null>(null);
   const [locations, setLocations] = useState<LocationType[] | null>(null);

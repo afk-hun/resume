@@ -121,6 +121,7 @@ export type EpisodeType = {
   name: string;
   air_date: string;
   episode: string;
+  characters: string[];
 };
 
 const EpisodeList = styled.div`
@@ -135,11 +136,12 @@ const EpisodeList = styled.div`
 `;
 
 const Episode = (props: EpisodeType) => {
+  const { name, air_date, episode } = props;
   return (
     <EpisodeContainer>
-      <EpisodeName>{props.name}</EpisodeName>
-      <EpisodeOnAirDate>{props.air_date}</EpisodeOnAirDate>
-      <EpisodeNumber>{props.episode}</EpisodeNumber>
+      <EpisodeName>{name}</EpisodeName>
+      <EpisodeOnAirDate>{air_date}</EpisodeOnAirDate>
+      <EpisodeNumber>{episode}</EpisodeNumber>
     </EpisodeContainer>
   );
 };
@@ -221,15 +223,7 @@ export default function CharacterDetails(props: CharacterDetailsProps) {
         <EpisodeList>
           {episodes &&
             episodes.map((episode) => {
-              return (
-                <Episode
-                  key={episode.id}
-                  name={episode.name}
-                  air_date={episode.air_date}
-                  episode={episode.episode}
-                  id={episode.id}
-                />
-              );
+              return <Episode key={episode.id} {...episode} />;
             })}
         </EpisodeList>
       </EpisodeTable>

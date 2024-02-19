@@ -3,7 +3,7 @@ import Navbar from "../components/rick-and-morty/Navbar";
 import { createBrowserRouter } from "react-router-dom";
 import Characters from "../components/rick-and-morty/Characters/Characters";
 import Locations from "../components/rick-and-morty/Locations/Locations";
-import Episodes from "../components/rick-and-morty/Episodes";
+import Episodes from "../components/rick-and-morty/Episodes/Episodes";
 import styled from "styled-components";
 
 const Container = styled.div`

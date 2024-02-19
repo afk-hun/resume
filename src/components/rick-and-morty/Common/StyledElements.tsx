@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import skeletonImg from "../../../asset/skeleton.jpeg";
 
 export const Modal = styled.div`
   display: flex;
@@ -47,4 +48,50 @@ export const NavigationButton = styled.button`
   &:active {
     background-color: #665c84;
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #fff4bd;
+  color: #887bb0;
+  border-radius: 4px;
+`;
+
+export const CharacterContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  border: 1px solid #887bb0;
+  border-radius: 4px;
+`;
+
+export const CharacterBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const Character = styled.div<{ $background: string }>`
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: url(${(props) =>
+    props.$background ? props.$background : skeletonImg});
+  background-size: cover;
+`;
+
+export const CharacterName = styled.h1`
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
 `;
