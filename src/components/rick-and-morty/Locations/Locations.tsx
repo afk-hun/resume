@@ -106,8 +106,6 @@ export default function Locations() {
     } catch (e: any) {}
   }
 
-  function locationDetailsHandler(): void {}
-
   return (
     <Section data-testid="rm-locations">
       <Container>
@@ -120,13 +118,7 @@ export default function Locations() {
           </TableHeaderContainer>
           {locations &&
             locations.map((location) => {
-              return (
-                <LocationCard
-                  key={location.id}
-                  {...location}
-                  onClick={locationDetailsHandler}
-                />
-              );
+              return <LocationCard key={location.id} {...location} />;
             })}
         </LocationTable>
       </Container>

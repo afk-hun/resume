@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { LocationType } from "./Locations";
 import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
-
 import { useState, MouseEvent } from "react";
 import { CharacterType } from "../Characters/CharacterCard";
 import { getDataByLink, getDatasByLinks } from "../../../api/rickAndMortyCalls";
@@ -11,6 +10,7 @@ import {
   CharacterContainer,
   CharacterName,
   Container,
+  More,
 } from "../Common/StyledElements";
 
 const LocationContainer = styled.div`
@@ -45,24 +45,9 @@ const Dimension = styled.h1`
   padding-left: 1rem;
   min-width: 200px;
 `;
-const More = styled.a`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 80px;
-  max-height: 24px;
-  color: #fff4bd;
-  background: #887bb0;
-  border-radius: 4px;
-  cursor: pointer;
-`;
 
-type LocationCardProps = { onClick: () => void } & LocationType;
-
-export function LocationCard(props: LocationCardProps) {
-  const { name, type, dimension, onClick, residents } = props;
+export function LocationCard(props: LocationType) {
+  const { name, type, dimension, residents } = props;
 
   const [residentsState, setResidentsState] = useState<CharacterType[] | null>(
     null

@@ -5,6 +5,7 @@ import { CharacterType } from "./CharacterCard";
 import { useEffect, useState } from "react";
 import { getDatasByLinks, getDataByLink } from "../../../api/rickAndMortyCalls";
 import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
+import { EpisodeType } from "../Common/types";
 
 const DetailsContainer = styled.div`
   background-color: #fff4bd;
@@ -115,15 +116,6 @@ const Close = styled.a`
     color: #fff4bd;
   }
 `;
-
-export type EpisodeType = {
-  id: number;
-  name: string;
-  air_date: string;
-  episode: string;
-  characters: string[];
-};
-
 const EpisodeList = styled.div`
   display: flex;
   flex-direction: column;

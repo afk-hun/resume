@@ -95,3 +95,17 @@ export const CharacterName = styled.h1`
   padding: 0;
   font-size: 10px;
 `;
+
+export const More = styled.a`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  max-height: 24px;
+  color: #fff4bd;
+  background: #887bb0;
+  border-radius: 4px;
+  cursor: pointer;
+`;
