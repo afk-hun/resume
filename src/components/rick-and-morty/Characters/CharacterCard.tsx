@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MouseEvent } from "react";
 import skeletonImg from "../../../asset/skeleton.jpeg";
 import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
+import { CharacterType } from "../Common/types";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -113,26 +114,6 @@ const More = styled.a`
     opacity: 1;
   }
 `;
-
-export type CharacterType = {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: {
-    name: string;
-    url: string;
-  };
-  location: {
-    name: string;
-    url: string;
-  };
-  image: string;
-  episode: string[];
-  url: string;
-};
 
 export type CharacterCardProps = {
   character: CharacterType;

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { MouseEvent } from "react";
 import skeletonImage from "../../../asset/skeleton.jpeg";
-import { CharacterType } from "./CharacterCard";
 import { useEffect, useState } from "react";
 import { getDatasByLinks, getDataByLink } from "../../../api/rickAndMortyCalls";
 import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
-import { EpisodeType } from "../Common/types";
+import { CharacterType, EpisodeType } from "../Common/types";
 
 const DetailsContainer = styled.div`
   background-color: #fff4bd;

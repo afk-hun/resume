@@ -17,12 +17,11 @@ export const Modal = styled.div`
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const Navigation = styled.div`
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   justify-content: center;
   gap: 1rem;
 `;
@@ -96,6 +95,35 @@ export const CharacterName = styled.h1`
   font-size: 10px;
 `;
 
+export const TableHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+`;
+
+export const TableHeaderTitle = styled.h1`
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  inline-size: 170px;
+  overflow-wrap: break-word;
+  font-weight: 600;
+`;
+
+export const TableHeaderSubtitle = styled.h1`
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  inline-size: 170px;
+  overflow-wrap: break-word;
+  font-weight: 300;
+`;
+
+export const TableHeaderEmpty = styled.h1`
+  min-width: 80px;
+  margin: 0;
+`;
 export const More = styled.a`
   margin: 0;
   padding: 0;
@@ -108,4 +136,57 @@ export const More = styled.a`
   background: #887bb0;
   border-radius: 4px;
   cursor: pointer;
+`;
+
+export const MainSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  /* width: 100%; */
+
+  @media (min-width: 1024px) {
+    /* max-width: 1000px; */
+  }
+`;
+export const Content = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #887bb0;
+  border-radius: 4px;
+  border: 2px solid #887bb0;
+  gap: 0.5rem;
+  //max-width: 768px;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    //width: 100%;
+    padding: 0 2rem 1.5rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1000px;
+  }
+`;
+
+export const ItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ItemName = styled.h1`
+  display: flex;
+  align-items: center;
+  inline-size: 170px;
+  overflow-wrap: break-word;
+  flex-grow: 1;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    //inline-size: 200px;
+  }
 `;

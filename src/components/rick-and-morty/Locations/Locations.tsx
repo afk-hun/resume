@@ -1,76 +1,32 @@
 import { useEffect, useState, MouseEvent } from "react";
 import { getDataByLink, getLocations } from "../../../api/rickAndMortyCalls";
 import {
+  Content,
+  MainSection,
   Navigation,
   NavigationButton,
-  Section,
+  TableHeaderContainer,
+  TableHeaderEmpty,
+  TableHeaderSubtitle,
+  TableHeaderTitle,
 } from "../Common/StyledElements";
 import styled from "styled-components";
 import { LocationCard } from "./LocationCard";
+import { LeftText, ListContainer } from "../Common/CardElements";
+import { LocationType } from "../Common/types";
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  color: #887bb0;
-  width: 1000px;
-  border-radius: 4px;
+const LocationContent = styled(Content)`
   padding-top: 1rem;
-  padding-bottom: 1rem;
 `;
 
-const LocationTable = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  display: flex;
-  border-radius: 4px;
-  width: 800px;
-  gap: 0.5rem;
-  border: 2px solid #887bb0;
-  padding: 0.5rem 2rem 1.5rem 2rem;
-`;
-
-const TableHeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-`;
-const TableHeaderTitle = styled.h1`
-  margin: 0;
-  width: 100%;
-  font-weight: 600;
-`;
-const TableHeaderType = styled.h1`
-  margin: 0;
-  min-width: 150px;
-  font-weight: 600;
-  min-width: 150px;
-`;
 const TableHeaderDimension = styled.h1`
   display: flex;
   justify-content: flex-start;
   margin: 0;
   font-weight: 600;
-  min-width: 200px;
+  inline-size: 120px;
+  overflow-wrap: break-word;
 `;
-
-const TableHeaderEmpty = styled.h1`
-  min-width: 80px;
-`;
-
-export type LocationType = {
-  id: string;
-  name: string;
-  type: string;
-  dimension: string;
-  residents: string[];
-  url: string;
-  created: string;
-};
 
 export default function Locations() {
   const [nextPage, setNextPage] = useState<string | null>(null);
@@ -107,33 +63,36 @@ export default function Locations() {
   }
 
   return (
-    <Section data-testid="rm-locations">
-      <Container>
-        <LocationTable>
-          <TableHeaderContainer>
+    <MainSection data-testid="rm-locations">
+      <LocationContent>
+        <TableHeaderContainer>
+          <LeftText>
             <TableHeaderTitle>Name</TableHeaderTitle>
-            <TableHeaderType>Type</TableHeaderType>
+            <TableHeaderSubtitle>Type</TableHeaderSubtitle>
+          </LeftText>
+          <ListContainer>
             <TableHeaderDimension>Dimension</TableHeaderDimension>
             <TableHeaderEmpty />
-          </TableHeaderContainer>
-          {locations &&
-            locations.map((location) => {
-              return <LocationCard key={location.id} {...location} />;
-            })}
-        </LocationTable>
-      </Container>
-      <Navigation>
-        {previousPage !== null && (
-          <NavigationButton onClick={previousPageHandler} type="button">
-            &lt; previous
-          </NavigationButton>
-        )}
-        {nextPage !== null && (
-          <NavigationButton onClick={nextPageHandler} type="button">
-            next &gt;
-          </NavigationButton>
-        )}
-      </Navigation>
-    </Section>
+          </ListContainer>
+        </TableHeaderContainer>
+        {locations &&
+          locations.map((location) => {
+            return <LocationCard key={location.id} {...location} />;
+          })}
+
+        <Navigation>
+          {previousPage !== null && (
+            <NavigationButton onClick={previousPageHandler} type="button">
+              &lt; previous
+            </NavigationButton>
+          )}
+          {nextPage !== null && (
+            <NavigationButton onClick={nextPageHandler} type="button">
+              next &gt;
+            </NavigationButton>
+          )}
+        </Navigation>
+      </LocationContent>
+    </MainSection>
   );
 }

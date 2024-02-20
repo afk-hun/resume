@@ -1,5 +1,5 @@
 import { MouseEvent, useEffect, useState } from "react";
-import { CharacterCard, CharacterType } from "./CharacterCard";
+import { CharacterCard } from "./CharacterCard";
 import { getDataByLink, getCharacters } from "../../../api/rickAndMortyCalls";
 import styled from "styled-components";
 
@@ -10,6 +10,7 @@ import {
   NavigationButton,
   Section,
 } from "../Common/StyledElements";
+import { CharacterType } from "../Common/types";
 
 const Container = styled.div`
   display: flex;

@@ -1,38 +1,41 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { useDefaultIfUnknown } from "../../../utils/utilityFunctions";
-import { useState, MouseEvent } from "react";
-import { getDataByLink, getDatasByLinks } from "../../../api/rickAndMortyCalls";
+import { CharacterType, EpisodeType } from "../Common/types";
+import { getDatasByLinks, getDataByLink } from "../../../api/rickAndMortyCalls";
 import {
-  Character,
-  CharacterBox,
-  CharacterContainer,
-  CharacterName,
   Container,
-  ItemContainer,
-  ItemName,
   More,
+  CharacterContainer,
+  CharacterBox,
+  Character,
+  CharacterName,
+  ItemName,
+  ItemContainer,
 } from "../Common/StyledElements";
-import { CharacterType, LocationType } from "../Common/types";
 import { LeftText, ListContainer } from "../Common/CardElements";
 
-const LocationName = styled(ItemName)`
+const EpisodeOnAirDate = styled(ItemName)`
   font-weight: 300;
 `;
-const Dimension = styled(ItemName)`
-  inline-size: 120px;
+
+const EpisodeNumber = styled(ItemName)`
+  padding-right: 1rem;
+  justify-content: flex-end;
+  min-width: 80px;
+  font-weight: 500;
+  inline-size: auto;
 `;
 
-export function LocationCard(props: LocationType) {
-  const { name, type, dimension, residents } = props;
-
+const EpisodeCard = (props: EpisodeType) => {
+  const [expand, setExpand] = useState<boolean>(false);
   const [residentsState, setResidentsState] = useState<CharacterType[] | null>(
     null
   );
-  const [expand, setExpand] = useState<boolean>(false);
+  const { name, air_date, episode, characters } = props;
 
-  async function residentClickHandler(event: MouseEvent<HTMLAnchorElement>) {
+  async function residentClickHandler() {
     try {
-      const response = await getDatasByLinks(residents, getDataByLink);
+      const response = await getDatasByLinks(characters, getDataByLink);
       setResidentsState(response as CharacterType[]);
       setExpand((prevState) => {
         return !prevState;
@@ -45,11 +48,19 @@ export function LocationCard(props: LocationType) {
       <ItemContainer>
         <LeftText>
           <ItemName>{name}</ItemName>
-          <LocationName>{useDefaultIfUnknown(type, "Undefined")}</LocationName>
+          <EpisodeOnAirDate>{air_date}</EpisodeOnAirDate>
         </LeftText>
         <ListContainer>
-          <Dimension>{useDefaultIfUnknown(dimension, "Undefined")}</Dimension>
-          <More onClick={residentClickHandler}>Residents</More>
+          <EpisodeNumber>
+            #{episode.substring(episode.length - 2, episode.length)}
+          </EpisodeNumber>
+          <More
+            onClick={() => {
+              residentClickHandler();
+            }}
+          >
+            Residents
+          </More>
         </ListContainer>
       </ItemContainer>
 
@@ -67,4 +78,6 @@ export function LocationCard(props: LocationType) {
       )}
     </Container>
   );
-}
+};
+
+export default EpisodeCard;

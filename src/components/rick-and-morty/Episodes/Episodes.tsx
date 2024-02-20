@@ -1,29 +1,19 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import {
-  getDataByLink,
-  getDatasByLinks,
-  getSeasons,
-} from "../../../api/rickAndMortyCalls";
-import {
-  CharacterContainer,
-  CharacterBox,
-  Character,
-  CharacterName,
-  More,
-  Container,
-} from "../Common/StyledElements";
-import { CharacterType } from "../Characters/CharacterCard";
+import { getSeasons } from "../../../api/rickAndMortyCalls";
 import { EpisodeType } from "../Common/types";
+import EpisodeCard from "./EpisodeCard";
+import {
+  Content,
+  MainSection,
+  TableHeaderContainer,
+  TableHeaderEmpty,
+  TableHeaderSubtitle,
+  TableHeaderTitle,
+} from "../Common/StyledElements";
+import { LeftText, ListContainer } from "../Common/CardElements";
 
-const MainContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-`;
-const Navigation = styled.div`
+const EpisodeSelector = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -37,7 +27,6 @@ const SeasonText = styled.div`
   padding-right: 1rem;
   font-weight: 600;
 `;
-
 const SeasonListItem = styled.li`
   display: flex;
   list-style: none;
@@ -70,124 +59,15 @@ const SeasonListButton = styled.button`
   }
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #887bb0;
-  border-radius: 4px;
-  border: 2px solid #887bb0;
-  gap: 0.5rem;
-  width: 800px;
-  padding: 0 2rem 1.5rem 2rem;
-`;
-
-const TableHeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-`;
-const TableHeaderTitle = styled.h1`
-  margin: 0;
-  width: 100%;
-  font-weight: 600;
-`;
-const TableHeaderOnAir = styled.h1`
-  margin: 0;
-  min-width: 170px;
-  font-weight: 600;
-`;
 const TableHeaderHashtag = styled.h1`
   display: flex;
   padding-right: 1rem;
   justify-content: flex-end;
+  align-items: center;
   margin: 0;
   font-weight: 600;
   min-width: 80px;
 `;
-
-const TableHeaderEmpty = styled.h1`
-  min-width: 80px;
-`;
-
-const EpisodeContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const EpisodeName = styled.h1`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-  flex-wrap: wrap;
-  width: 100%;
-`;
-const EpisodeOnAirDate = styled.h1`
-  display: flex;
-  align-items: center;
-  margin: 0;
-  min-width: 170px;
-  font-weight: 300;
-`;
-const EpisodeNumber = styled.h1`
-  padding-right: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-width: 80px;
-  margin: 0;
-  font-weight: 500;
-`;
-
-const Episode = (props: EpisodeType) => {
-  const [expand, setExpand] = useState<boolean>(false);
-  const [residentsState, setResidentsState] = useState<CharacterType[] | null>(
-    null
-  );
-  const { name, air_date, episode, characters } = props;
-
-  async function residentClickHandler() {
-    try {
-      const response = await getDatasByLinks(characters, getDataByLink);
-      setResidentsState(response as CharacterType[]);
-      setExpand((prevState) => {
-        return !prevState;
-      });
-    } catch {}
-  }
-
-  return (
-    <Container>
-      <EpisodeContainer>
-        <EpisodeName>{name}</EpisodeName>
-        <EpisodeOnAirDate>{air_date}</EpisodeOnAirDate>
-        <EpisodeNumber>
-          #{episode.substring(episode.length - 2, episode.length)}
-        </EpisodeNumber>
-        <More
-          onClick={() => {
-            residentClickHandler();
-          }}
-        >
-          Residents
-        </More>
-      </EpisodeContainer>
-
-      {expand && (
-        <CharacterContainer>
-          {residentsState?.map((resident) => {
-            return (
-              <CharacterBox key={resident.id}>
-                <Character $background={resident.image}></Character>
-                <CharacterName>{resident.name}</CharacterName>
-              </CharacterBox>
-            );
-          })}
-        </CharacterContainer>
-      )}
-    </Container>
-  );
-};
 
 type SeasonType = {
   info: {
@@ -225,9 +105,9 @@ export default function Episodes() {
   }, []);
 
   return (
-    <MainContainer>
+    <MainSection>
       <Content>
-        <Navigation>
+        <EpisodeSelector>
           <SeasonText>Season</SeasonText>
           {seasons.map((season, index) => {
             return (
@@ -243,18 +123,22 @@ export default function Episodes() {
               </SeasonListItem>
             );
           })}
-        </Navigation>
+        </EpisodeSelector>
         <TableHeaderContainer>
-          <TableHeaderTitle>Name</TableHeaderTitle>
-          <TableHeaderOnAir>On Air</TableHeaderOnAir>
-          <TableHeaderHashtag>#</TableHeaderHashtag>
-          <TableHeaderEmpty />
+          <LeftText>
+            <TableHeaderTitle>Name</TableHeaderTitle>
+            <TableHeaderSubtitle>On Air</TableHeaderSubtitle>
+          </LeftText>
+          <ListContainer>
+            <TableHeaderHashtag>#</TableHeaderHashtag>
+            <TableHeaderEmpty />
+          </ListContainer>
         </TableHeaderContainer>
         {seasons[activeSeason] !== undefined &&
           seasons[activeSeason].results.map((episode) => {
-            return <Episode key={episode.id} {...episode} />;
+            return <EpisodeCard key={episode.id} {...episode} />;
           })}
       </Content>
-    </MainContainer>
+    </MainSection>
   );
 }
